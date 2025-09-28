@@ -1,0 +1,77 @@
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;0,700;1,400;1,500;1,700&display=swap");
+body {
+  font-family: "DM Sans", sans-serif;
+}
+
+option {
+  color: black;
+}
+
+.flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.fee-voucher {
+  font-family: Arial, sans-serif;
+  /* Adjust width as needed */
+  margin: 0 auto; /* Center the voucher horizontally */
+  /* padding: 20px; */
+  /* border: 1px solid #ddd; */
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 2;
+}
+.underlineText {
+  text-decoration: underline;
+}
+
+.std-voucher-data {
+  tr {
+    text-align: center;
+    td {
+      padding: 0;
+    }
+  }
+}
+
+
+/* CSS for print voucher */
+@media print {
+  @page {
+      size: A4 landscape;
+      margin: 0.5cm;
+      /* margin-top: 0;
+      margin-bottom: 0; */
+  }
+  body * {
+      visibility: hidden;
+  }
+  .actual-receipt, .actual-receipt * {
+      visibility: visible;
+  }
+  .actual-receipt {
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: auto;
+      transform: scale(1); /* Adjust scale to fit content */
+      transform-origin: top left;
+      page-break-inside: avoid;
+  }
+  .fee-voucher {
+      font-size: 10px; /* Adjust font size for better readability */
+      page-break-inside: avoid;
+  }
+  .fee-voucher table, .fee-voucher th, .fee-voucher td {
+      border: 1px solid black;
+      font-size: 10px; /* Adjust font size */
+  }
+}
+
