@@ -1,6 +1,14 @@
 import React, { useEffect, useState } from "react";
 import { MDBDataTable } from "mdbreact";
-import { Row, Col, Card, CardBody, CardTitle, CardSubtitle, Spinner } from "reactstrap";
+import {
+  Row,
+  Col,
+  Card,
+  CardBody,
+  CardTitle,
+  CardSubtitle,
+  Spinner,
+} from "reactstrap";
 
 //Import Breadcrumb
 // import Breadcrumbs from "../../../components/common/Breadcrumb";
@@ -9,8 +17,8 @@ import { Box } from "@chakra-ui/react";
 import axios from "axios";
 
 const DatatableTables = () => {
-  const [stdData, setStdData] = useState([])
-  const [loading, setLoading] = useState(true)
+  const [stdData, setStdData] = useState([]);
+  const [loading, setLoading] = useState(true);
   const data = {
     columns: [
       {
@@ -58,27 +66,25 @@ const DatatableTables = () => {
     //   date: "2011/01/25",
     //   salary: "$112",
     // },
-
   };
   useEffect(() => {
-    axios.get('http://localhost:8000/api/v1/users/student')
+    axios
+      .get(`${process.env.SERVER_ORIGION}/api/v1/users/student`)
       .then((res) => {
         const studentData = res.data.allStdData;
         // console.log("All students ", res.data.allStdData);
-        setStdData(studentData)
+        setStdData(studentData);
       })
       .catch((error) => {
         console.log("Error at getting data of students  ", error);
       })
       .finally(() => {
-        setLoading(false)
-      })
-
-  }, [])
+        setLoading(false);
+      });
+  }, []);
   document.title = "SIMOY | Data Tables | Students";
   return (
     <Box pt={{ base: "130px", md: "80px", xl: "80px" }}>
-
       <React.Fragment>
         <div className="page-content">
           <div className="container-fluid">
@@ -87,12 +93,15 @@ const DatatableTables = () => {
                 <Card>
                   <CardBody>
                     <CardTitle className="h4">List of Students</CardTitle>
-                    {!loading
-                      ? <MDBDataTable responsive bordered data={data} />
-                      : <dir className="d-flex justify-content-center align-items-center" ><Spinner type="border" color="danger" className="p-4">Loading...</Spinner></dir>
-                    }
-
-
+                    {!loading ? (
+                      <MDBDataTable responsive bordered data={data} />
+                    ) : (
+                      <dir className="d-flex justify-content-center align-items-center">
+                        <Spinner type="border" color="danger" className="p-4">
+                          Loading...
+                        </Spinner>
+                      </dir>
+                    )}
                   </CardBody>
                 </Card>
               </Col>

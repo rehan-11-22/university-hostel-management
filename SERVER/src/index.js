@@ -12,18 +12,21 @@ const cookieParser = require("cookie-parser");
 
 const app = express();
 
-// CORS configuration for Vercel
+// Enhanced CORS configuration for Vercel
 app.use(
   cors({
     origin: function (origin, callback) {
-      // Allow requests with no origin (like mobile apps or Postman)
+      // Allow requests with no origin (like mobile apps, Postman, or server-to-server)
       if (!origin) return callback(null, true);
 
-      const allowedOrigins = process.env.ALLOWED_ORIGINS
-        ? process.env.ALLOWED_ORIGINS.split(",")
-        : ["http://localhost:3000"];
+      const allowedOrigins = process.env.CORS_ORIGIN
+        ? process.env.CORS_ORIGIN.split(",")
+        : [
+            "http://localhost:3000",
+            "https://your-frontend-app.vercel.app", // Replace with your actual frontend URL
+          ];
 
-      if (allowedOrigins.includes(origin)) {
+      if (allowedOrigins.includes(origin) || allowedOrigins.includes("*")) {
         callback(null, true);
       } else {
         console.log("Blocked by CORS:", origin);
@@ -31,8 +34,19 @@ app.use(
       }
     },
     credentials: true,
+    methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS", "PATCH"],
+    allowedHeaders: [
+      "Content-Type",
+      "Authorization",
+      "X-Requested-With",
+      "Accept",
+      "Origin",
+    ],
   })
 );
+
+// Handle preflight requests
+app.options("*", cors());
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
