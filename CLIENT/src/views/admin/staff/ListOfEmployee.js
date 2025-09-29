@@ -131,7 +131,7 @@ const EmployeeList = () => {
 
   useEffect(() => {
     axios
-      .get(`${process.env.SERVER_ORIGION}/api/v1/users/staff`)
+      .get(`${BASE_URL}/api/v1/users/staff`)
       .then((res) => {
         // console.log(res);
         // const empData = res?.data?.allEmpData;

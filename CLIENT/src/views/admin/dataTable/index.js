@@ -15,6 +15,7 @@ import {
 import "../../../assets/css/Datatables.scss";
 import { Box } from "@chakra-ui/react";
 import axios from "axios";
+import { BASE_URL } from "services/Helper";
 
 const DatatableTables = () => {
   const [stdData, setStdData] = useState([]);
@@ -69,7 +70,7 @@ const DatatableTables = () => {
   };
   useEffect(() => {
     axios
-      .get(`${process.env.SERVER_ORIGION}/api/v1/users/student`)
+      .get(`${BASE_URL}/api/v1/users/student`)
       .then((res) => {
         const studentData = res.data.allStdData;
         // console.log("All students ", res.data.allStdData);
