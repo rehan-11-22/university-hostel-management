@@ -16,24 +16,24 @@ import IconBox from "components/icons/IconBox";
 import React, { useEffect, useState } from "react";
 import {
   MdAppRegistration,
-  MdAttachMoney,
+  // MdAttachMoney,
   MdBarChart,
   MdGppGood,
-  MdNotificationImportant,
+  // MdNotificationImportant,
 } from "react-icons/md";
-import CheckTable from "views/admin/default/components/CheckTable";
-import ComplexTable from "views/admin/default/components/ComplexTable";
+// import CheckTable from "views/admin/default/components/CheckTable";
+// import ComplexTable from "views/admin/default/components/ComplexTable";
 // import DailyTraffic from "views/admin/default/components/DailyTraffic";
 import PieCard from "views/admin/default/components/PieCard";
-import Tasks from "views/admin/default/components/Tasks";
-import TotalSpent from "views/admin/default/components/TotalSpent";
+// import Tasks from "views/admin/default/components/Tasks";
+// import TotalSpent from "views/admin/default/components/TotalSpent";
 import WeeklyRevenue from "views/admin/default/components/WeeklyRevenue";
-import {
-  columnsDataCheck,
-  columnsDataComplex,
-} from "views/admin/default/variables/columnsData";
-import tableDataCheck from "views/admin/default/variables/tableDataCheck.json";
-import tableDataComplex from "views/admin/default/variables/tableDataComplex.json";
+// import {
+//   columnsDataCheck,
+//   columnsDataComplex,
+// } from "views/admin/default/variables/columnsData";
+// import tableDataCheck from "views/admin/default/variables/tableDataCheck.json";
+// import tableDataComplex from "views/admin/default/variables/tableDataComplex.json";
 import ApiRequest from "api/dashboardApi/api";
 // base url for server
 import { BASE_URL } from "services/Helper.js";
@@ -347,12 +347,7 @@ export default function UserReports() {
                   h="56px"
                   bg={boxBg}
                   icon={
-                    <Icon
-                      w="32px"
-                      h="32px"
-                      as={MdGppGood}
-                      color={brandColor}
-                    />
+                    <Icon w="32px" h="32px" as={MdGppGood} color={brandColor} />
                   }
                 />
               }

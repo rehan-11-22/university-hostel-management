@@ -17,37 +17,35 @@ import {
 // Admin Imports
 import MainDashboard from "views/admin/default";
 import RegisterStaff from "views/admin/staff";
-import ComplaintSeen from './views/admin/complaints'
+import ComplaintSeen from "./views/admin/complaints";
 // import NFTMarketplace from "views/admin/marketplace";
 import Profile from "views/admin/profile";
 import StudentRecord from "views/admin/std/StudentRecord";
 // import RTL from "views/admin/rtl";
-import RegNewUser from './views/admin/std/RegNewStudent'
-import AttendenceLog from './views/admin/AttendenceLog'
-import HostelDataList from './views/admin/hostelList/HostelDetailsList'
+import RegNewUser from "./views/admin/std/RegNewStudent";
+// import AttendenceLog from './views/admin/AttendenceLog'
+import HostelDataList from "./views/admin/hostelList/HostelDetailsList";
 import EmployeeLoginHisoty from "views/admin/staff/LoginHistory";
 import EmployeeList from "views/admin/staff/ListOfEmployee";
 import GenFeeVoucher from "views/admin/fee/genFeeVoucher";
 
-
 // suprident routes
-import RegisterHostel from './views/suprident/hostel/registerHostel'
+import RegisterHostel from "./views/suprident/hostel/registerHostel";
 import FeeGenerationForm from "views/suprident/fee/feeGenerationForm";
-import MessAtendence from "./views/suprident/attendence"
-import FeeList from './views/suprident/fee/feeList'
-import SComplaint from './views/suprident/complaint'
+import MessAtendence from "./views/suprident/attendence";
+import FeeList from "./views/suprident/fee/feeList";
+import SComplaint from "./views/suprident/complaint";
 
 // Clark routes
-import DefaultCom from './views/clark/default'
-
+import DefaultCom from "./views/clark/default";
 
 // Auth Imports
 import SignInCentered from "views/auth/signIn";
 
 // students routes
-import Complaint from './views/student/complaint'
-import SProfile from './views/student/profile'
-import Complaintdetails from './views/student/complaintDetail'
+import Complaint from "./views/student/complaint";
+import SProfile from "./views/student/profile";
+import Complaintdetails from "./views/student/complaintDetail";
 import { IoMdListBox } from "react-icons/io";
 import { FaToiletPaper, FaUserCheck } from "react-icons/fa";
 import { AiFillDashboard } from "react-icons/ai";
@@ -56,14 +54,14 @@ import { RiFileList3Fill } from "react-icons/ri";
 import { StdFeeList } from "views/admin/std/StdFeeList";
 import { StdFeeRecord } from "views/admin/std/StdFeeRecord";
 
-
-
 const routes = [
   {
     name: "Main Dashboard",
     layout: "/admin",
     path: "/default",
-    icon: <Icon as={AiFillDashboard} width='20px' height='20px' color='inherit' />,
+    icon: (
+      <Icon as={AiFillDashboard} width="20px" height="20px" color="inherit" />
+    ),
     component: MainDashboard,
     roles: ["admin"],
   },
@@ -71,7 +69,7 @@ const routes = [
     name: "Employee Log",
     layout: "/admin",
     path: "/history",
-    icon: <Icon as={MdHistory} width='20px' height='20px' color='inherit' />,
+    icon: <Icon as={MdHistory} width="20px" height="20px" color="inherit" />,
     component: EmployeeLoginHisoty,
     roles: ["admin"],
   },
@@ -79,7 +77,9 @@ const routes = [
     name: "New Employee",
     layout: "/admin",
     path: "/register",
-    icon: <Icon as={MdAppRegistration} width='20px' height='20px' color='inherit' />,
+    icon: (
+      <Icon as={MdAppRegistration} width="20px" height="20px" color="inherit" />
+    ),
     component: RegisterStaff,
     roles: ["admin"],
   },
@@ -87,14 +87,16 @@ const routes = [
     name: "Employee List",
     layout: "/admin",
     path: "/employee-list",
-    icon: <Icon as={IoMdListBox} width='20px' height='20px' color='inherit' />,
+    icon: <Icon as={IoMdListBox} width="20px" height="20px" color="inherit" />,
     component: EmployeeList,
     roles: ["admin"],
   },
   {
     name: "Hostels Availabiliy",
     layout: "/admin",
-    icon: <Icon as={MdEventAvailable} width='20px' height='20px' color='inherit' />,
+    icon: (
+      <Icon as={MdEventAvailable} width="20px" height="20px" color="inherit" />
+    ),
     path: "/hosteldetails",
     component: HostelDataList,
     roles: ["admin"],
@@ -102,7 +104,9 @@ const routes = [
   {
     name: "Fee Genration",
     layout: "/admin",
-    icon: <Icon as={FaToiletPaper} width='20px' height='20px' color='inherit' />,
+    icon: (
+      <Icon as={FaToiletPaper} width="20px" height="20px" color="inherit" />
+    ),
     path: "/feegenration",
     component: FeeGenerationForm,
     roles: ["admin"],
@@ -110,7 +114,7 @@ const routes = [
   {
     name: "Fee List",
     layout: "/admin",
-    icon: <Icon as={MdListAlt} width='20px' height='20px' color='inherit' />,
+    icon: <Icon as={MdListAlt} width="20px" height="20px" color="inherit" />,
     path: "/feelist",
     component: FeeList,
     roles: ["admin"],
@@ -118,7 +122,7 @@ const routes = [
   {
     name: "Student Fee Record",
     layout: "/admin",
-    icon: <Icon as={MdListAlt} width='20px' height='20px' color='inherit' />,
+    icon: <Icon as={MdListAlt} width="20px" height="20px" color="inherit" />,
     path: "/feerecord",
     component: StdFeeRecord,
     roles: ["admin"],
@@ -151,7 +155,7 @@ const routes = [
   {
     name: "Students",
     layout: "/admin",
-    icon: <Icon as={MdGroups2} width='20px' height='20px' color='inherit' />,
+    icon: <Icon as={MdGroups2} width="20px" height="20px" color="inherit" />,
     path: "/StudentRecord",
     component: StudentRecord,
     roles: ["admin"],
@@ -160,7 +164,7 @@ const routes = [
     name: "Complaints",
     layout: "/admin",
     path: "/complaints",
-    icon: <Icon as={MdReport} width='20px' height='20px' color='inherit' />,
+    icon: <Icon as={MdReport} width="20px" height="20px" color="inherit" />,
     component: ComplaintSeen,
     roles: ["admin"],
   },
@@ -168,7 +172,7 @@ const routes = [
     name: "Profile",
     layout: "/admin",
     path: "/profile",
-    icon: <Icon as={MdPerson} width='20px' height='20px' color='inherit' />,
+    icon: <Icon as={MdPerson} width="20px" height="20px" color="inherit" />,
     component: Profile,
     roles: ["admin"],
   },
@@ -178,14 +182,14 @@ const routes = [
     name: "Register Student",
     layout: "/suprident",
     path: "/default",
-    icon: <Icon as={IoCreate} width='20px' height='20px' color='inherit' />,
+    icon: <Icon as={IoCreate} width="20px" height="20px" color="inherit" />,
     component: RegNewUser,
     roles: ["suprident"],
   },
   {
     name: "Register Hostel",
     layout: "/suprident",
-    icon: <Icon as={MdBarChart} width='20px' height='20px' color='inherit' />,
+    icon: <Icon as={MdBarChart} width="20px" height="20px" color="inherit" />,
     path: "/newhostel",
     component: RegisterHostel,
     roles: ["suprident"],
@@ -193,7 +197,7 @@ const routes = [
   {
     name: "Attendence",
     layout: "/suprident",
-    icon: <Icon as={FaUserCheck} width='20px' height='20px' color='inherit' />,
+    icon: <Icon as={FaUserCheck} width="20px" height="20px" color="inherit" />,
     path: "/mess-attendence",
     component: MessAtendence,
     roles: ["suprident"],
@@ -201,7 +205,7 @@ const routes = [
   {
     name: "Students",
     layout: "/suprident",
-    icon: <Icon as={MdGroups2} width='20px' height='20px' color='inherit' />,
+    icon: <Icon as={MdGroups2} width="20px" height="20px" color="inherit" />,
     path: "/studentRecord",
     component: StudentRecord,
     roles: ["suprident"],
@@ -209,7 +213,9 @@ const routes = [
   {
     name: "Hostels Availabiliy",
     layout: "/suprident",
-    icon: <Icon as={MdEventAvailable} width='20px' height='20px' color='inherit' />,
+    icon: (
+      <Icon as={MdEventAvailable} width="20px" height="20px" color="inherit" />
+    ),
     path: "/hosteldetails",
     component: HostelDataList,
     roles: ["suprident"],
@@ -218,7 +224,14 @@ const routes = [
     name: "Gen Fee Voucher",
     layout: "/suprident",
     path: "/feemodel",
-    icon: <Icon as={MdCurrencyExchange} width='20px' height='20px' color='inherit' />,
+    icon: (
+      <Icon
+        as={MdCurrencyExchange}
+        width="20px"
+        height="20px"
+        color="inherit"
+      />
+    ),
     component: GenFeeVoucher,
     roles: ["suprident"],
   },
@@ -226,7 +239,14 @@ const routes = [
     name: "Student Fee List",
     layout: "/suprident",
     path: "/feelist",
-    icon: <Icon as={MdCurrencyExchange} width='20px' height='20px' color='inherit' />,
+    icon: (
+      <Icon
+        as={MdCurrencyExchange}
+        width="20px"
+        height="20px"
+        color="inherit"
+      />
+    ),
     component: StdFeeList,
     roles: ["suprident"],
   },
@@ -234,7 +254,7 @@ const routes = [
   {
     name: "Complaints",
     layout: "/suprident",
-    icon: <Icon as={MdReport} width='20px' height='20px' color='inherit' />,
+    icon: <Icon as={MdReport} width="20px" height="20px" color="inherit" />,
     path: "/complaints",
     component: SComplaint,
     roles: ["suprident"],
@@ -243,7 +263,7 @@ const routes = [
   {
     name: "Attendence",
     layout: "/clark",
-    icon: <Icon as={FaUserCheck} width='20px' height='20px' color='inherit' />,
+    icon: <Icon as={FaUserCheck} width="20px" height="20px" color="inherit" />,
     path: "/default",
     component: MessAtendence,
     roles: ["clark"],
@@ -251,7 +271,7 @@ const routes = [
   {
     name: "Register Hostel",
     layout: "/clark",
-    icon: <Icon as={MdBarChart} width='20px' height='20px' color='inherit' />,
+    icon: <Icon as={MdBarChart} width="20px" height="20px" color="inherit" />,
     path: "/newhostel",
     component: RegisterHostel,
     roles: ["clark"],
@@ -259,7 +279,9 @@ const routes = [
   {
     name: "Hostels Availabiliy",
     layout: "/clark",
-    icon: <Icon as={MdEventAvailable} width='20px' height='20px' color='inherit' />,
+    icon: (
+      <Icon as={MdEventAvailable} width="20px" height="20px" color="inherit" />
+    ),
     path: "/hosteldetails",
     component: HostelDataList,
     roles: ["clark"],
@@ -267,7 +289,7 @@ const routes = [
   {
     name: "Students",
     layout: "/clark",
-    icon: <Icon as={MdGroups2} width='20px' height='20px' color='inherit' />,
+    icon: <Icon as={MdGroups2} width="20px" height="20px" color="inherit" />,
     path: "/studentRecord",
     component: StudentRecord,
     roles: ["clark"],
@@ -275,7 +297,7 @@ const routes = [
   {
     name: "Test",
     layout: "/clark",
-    icon: <Icon as={MdReport} width='20px' height='20px' color='inherit' />,
+    icon: <Icon as={MdReport} width="20px" height="20px" color="inherit" />,
     path: "/test",
     component: DefaultCom,
     roles: ["clark"],
@@ -286,7 +308,7 @@ const routes = [
     name: "Profile",
     layout: "/student",
     path: "/default",
-    icon: <Icon as={MdGroups2} width='20px' height='20px' color='inherit' />,
+    icon: <Icon as={MdGroups2} width="20px" height="20px" color="inherit" />,
     component: SProfile,
     roles: ["student"],
   },
@@ -303,7 +325,7 @@ const routes = [
     name: "Complaint",
     layout: "/student",
     path: "/complaint",
-    icon: <Icon as={MdReport} width='20px' height='20px' color='inherit' />,
+    icon: <Icon as={MdReport} width="20px" height="20px" color="inherit" />,
     component: Complaint,
     roles: ["student"],
   },
@@ -311,21 +333,21 @@ const routes = [
     name: "Complaint Status",
     layout: "/student",
     path: "/complaintDetails",
-    icon: <Icon as={RiFileList3Fill} width='20px' height='20px' color='inherit' />,
+    icon: (
+      <Icon as={RiFileList3Fill} width="20px" height="20px" color="inherit" />
+    ),
     component: Complaintdetails,
     roles: ["student"],
   },
- 
 
   {
     name: "Sign In",
     layout: "/auth",
     path: "/sign-in",
-    icon: <Icon as={MdLock} width='20px' height='20px' color='inherit' />,
+    icon: <Icon as={MdLock} width="20px" height="20px" color="inherit" />,
     component: SignInCentered,
     roles: ["admin", "suprident", "student"],
   },
-
 ];
 
 export default routes;

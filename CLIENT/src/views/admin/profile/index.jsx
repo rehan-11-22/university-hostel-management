@@ -1,18 +1,18 @@
 import React, { useEffect, useState } from "react";
 // Chakra imports
-import { Box, Grid, Spinner } from "@chakra-ui/react";
+import { Box, Spinner } from "@chakra-ui/react";
 
 // Custom components
 import Banner from "views/admin/profile/components/Banner";
-import General from "views/admin/profile/components/General";
-import Notifications from "views/admin/profile/components/Notifications";
-import Projects from "views/admin/profile/components/Projects";
-import Storage from "views/admin/profile/components/Storage";
-import Upload from "views/admin/profile/components/Upload";
+// import General from "views/admin/profile/components/General";
+// import Notifications from "views/admin/profile/components/Notifications";
+// import Projects from "views/admin/profile/components/Projects";
+// import Storage from "views/admin/profile/components/Storage";
+// import Upload from "views/admin/profile/components/Upload";
 
 // Assets
 import banner from "assets/img/auth/banner.png";
-import avatar from "assets/img/avatars/avatar4.png";
+// import avatar from "assets/img/avatars/avatar4.png";
 import { useAuth } from "contexts/AuthContext";
 
 // Component react strap
@@ -30,7 +30,7 @@ export default function Overview() {
       .get(`${BASE_URL}/api/v1/users/staff`)
       .then((res) => {
         // console.log(res);
-        console.log("res => ", res)
+        console.log("res => ", res);
         setEmployee(res?.data?.allEmpData);
       })
       .catch((err) => {
@@ -55,8 +55,8 @@ export default function Overview() {
               // posts="17"
               //  followers={user.email}
               // following="274"
-              phone = "03084462753"
-              email = {user.email}
+              phone="03084462753"
+              email={user.email}
             />
           </Col>
         </Row>
@@ -75,8 +75,8 @@ export default function Overview() {
                     avatar={emp?.avatar}
                     name={emp?.username}
                     job={emp.role}
-                    phone = "03084462753"
-                    email = {emp.email}
+                    phone="03084462753"
+                    email={emp.email}
                   />
                 </Col>
               );

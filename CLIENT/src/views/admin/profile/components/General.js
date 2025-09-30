@@ -10,7 +10,7 @@ export default function GeneralInformation(props) {
   const { ...rest } = props;
   // Chakra Color Mode
   const textColorPrimary = useColorModeValue("secondaryGray.900", "white");
-  const textColorSecondary = "gray.400";
+  // const textColorSecondary = "gray.400";
   const cardShadow = useColorModeValue(
     "0px 18px 40px rgba(112, 144, 176, 0.12)",
     "unset"
@@ -19,10 +19,11 @@ export default function GeneralInformation(props) {
     <Card mb={{ base: "0px", "2xl": "20px" }} {...rest}>
       <Text
         color={textColorPrimary}
-        fontWeight='bold'
-        fontSize='2xl'
-        mt='10px'
-        mb='4px'>
+        fontWeight="bold"
+        fontSize="2xl"
+        mt="10px"
+        mb="4px"
+      >
         Hostal Information
       </Text>
       {/* <Text color={textColorSecondary} fontSize='md' me='26px' mb='40px'>
@@ -32,18 +33,13 @@ export default function GeneralInformation(props) {
         a hand. We get our heart broken by people we love, even that we give
         them all...
       </Text> */}
-      <SimpleGrid columns='2' gap='20px'>
+      <SimpleGrid columns="2" gap="20px">
         <Information
           boxShadow={cardShadow}
-          title='Hostal Name'
-          value='Fatima Hostal'
+          title="Hostal Name"
+          value="Fatima Hostal"
         />
-        <Information
-          boxShadow={cardShadow}
-          title='Room Name'
-          value='F-13'
-        />
-       
+        <Information boxShadow={cardShadow} title="Room Name" value="F-13" />
       </SimpleGrid>
     </Card>
   );
