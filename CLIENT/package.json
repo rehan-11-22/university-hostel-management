@@ -16,8 +16,6 @@
     "@testing-library/jest-dom": "^5.14.1",
     "@testing-library/react": "^11.2.7",
     "@testing-library/user-event": "^12.8.3",
-    "ajv": "^6.12.6",
-    "ajv-keywords": "^3.5.2",
     "apexcharts": "3.35.2",
     "axios": "^1.6.8",
     "babel-cli": "^6.26.0",
@@ -61,13 +59,12 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "build": "SET NODE_OPTIONS=--openssl-legacy-provider && react-scripts build",
+    "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build",
-    "sitemap": "babel-node ./sitemap-builder.js",
-    "postinstall": "npm install ajv@6.12.6 ajv-keywords@3.5.2 --legacy-peer-deps"
+    "sitemap": "babel-node ./sitemap-builder.js"
   },
   "resolutions": {
     "react-error-overlay": "6.0.9"
